@@ -1,0 +1,31 @@
+# -*- coding: utf-8 -*-
+# SEEK: kuratierte Ketten/Sinn-Fixes (Batch 1-2 aus chain_flagged-Review).
+STEMS = {
+    'TWN_SEEK_PRG': {
+        61: 'ueber Wind zu berichten.)',
+        567: 'Ich teile keinen Lohn',
+        568: 'mit dir.',
+        709: 'Truppen bedroht uns!',
+        1009: 'eine der Ruinen, sagt man,',
+        1195: 'meidet Laser',
+        1206: 'Gleich stark.',
+        1248: 'Siedlungen zu schuetzen',
+        1249: 'ist eines Jaegers',
+        1250: 'Hauptaufgabe.',
+        1331: 'Sie glauben: das Feuer',
+        1332: 'schuetzt sie.',
+        1515: 'Verkauft sich gut.',
+        1586: 'Wie wagst du es, mit dem',
+        1587: 'Heiligen Buerger feilschen!',
+        1627: 'Um Buerger des',
+        1651: 'die sind noch zu.',
+        1667: 'Gehe durch den Durchgang,',
+        1668: 'du siehst die Wand.',
+        1860: 'Wegen eines Relikts reisst',
+        1861: 'die ganze Stadt ab.',
+        1885: 'Eine Nation grub ein Schiff',
+        1886: 'Und zwei Drachen stritten.',
+        1903: 'Ich sag dir: Menschen haben',
+        1904: 'nichts zu suchen hier.',
+    },
+}

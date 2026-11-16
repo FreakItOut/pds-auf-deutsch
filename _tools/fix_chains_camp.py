@@ -1,0 +1,32 @@
+# -*- coding: utf-8 -*-
+# CAMP: kuratierte Ketten/Sinn-Fixes (Batch 1 aus chain_flagged-Review).
+STEMS = {
+    'TWN_CAMP_PRG': {
+        23: '(Sieht nach Juniosamen...)',
+        37: '(Wassersack fuer lange Jagden.)',
+        52: '(Eingeweide in Antiseptikum.)',
+        55: '(Uralte Fundstuecke, Werkzeug...)',
+        206: 'Wir wollen das nicht erleben.',
+        244: 'unverletzt.',
+        257: 'Alles war weg.',
+        258: 'Sieht aus: das Reich hat',
+        259: 'Zoah zerstoert.',
+        267: 'Aber nicht in verkohlter...',
+        270: 'Jetzt kann ich',
+        271: 'mehr Traenke brauen.',
+        284: 'Beschwert sich meine Frau?',
+        342: 'Papa hat es erlegt.',
+        372: '(Er wacht bald auf.)',
+        385: 'Sorry...',
+        388: 'Sorry. Ich muss arbeiten...',
+        393: "Onkel An'jou sagte: Jagd",
+        394: 'auf Monster: sehr',
+        432: 'das Gegenmittel...',
+        585: 'Abenteuer, oder?',
+        594: 'Mhm, verstehe.',
+        722: 'Ein Verraeter bin ich am',
+        723: 'eigenen Dorf.',
+        774: 'Er will: komm zu Gash.',
+        775: 'Er wartet dort.',
+    },
+}

@@ -1,0 +1,60 @@
+# ---------------------------------------------------------------
+# Panzer Dragoon Saga – Deutsches Fan-Projekt
+# Nur Werkzeuge und Dokumentation gehören ins Repository.
+# ---------------------------------------------------------------
+
+# Spieldaten / Disc-Abbilder (NICHT veröffentlichen)
+Original_CD1/
+Original_CD2/
+Original_CD3/
+Original_CD4/
+PZS_CD*/
+*.bin
+*.cue
+*.iso
+*.img
+*.chd
+*.wav
+*.raw
+
+# Arbeits- und Build-Ordner (regenerierbar / Spieldaten)
+_work/
+_build/
+state/
+bup/
+*.state
+
+# Verteilung: nur Text ins Repo, keine EXE/Patch/Logos
+_dist/*.exe
+_dist/*.pzp
+_dist/*.ico
+_dist/*.png
+
+# Fremdwerkzeuge nicht weiterverteilen
+pdt-recompile-builder-*/
+pds-recompile.exe
+pds-recompile.ini
+
+# Temporäres / Analyse-Reste
+_tmp_*
+phase2/
+phase3/
+phase4/
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Editor / System
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+*.bak
+*.original.bak
+*.log
+
+# Veraltete Phase-1-Notiz (aktuell: _project/NOTES.md)
+_project/README.md
+

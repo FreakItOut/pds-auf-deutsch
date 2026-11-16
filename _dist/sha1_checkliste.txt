@@ -1,0 +1,11 @@
+Pruefsummen fuer die deutsche Fassung
+Panzer Dragoon Saga (Europe), Discs 1-4
+
+orig_sha1 = Pruefsumme deines UNBEARBEITETEN Track-1-Abbilds
+deutsch_sha1 = Pruefsumme NACH dem Patchen
+
+# disc;datei_groesse_bytes;orig_sha1;deutsch_sha1
+1;645506400;54abf937fe17851423f3cd1ad09cac5c2166cc00;aeb19223e54c5f89b6d1ffbea2b5e1b1c5bc4334
+2;559359696;bbf0be526029eb2a635d6dac325e21822b5b13cc;6a4b0fbec854cfd826c13cffdbd2193e70788a2f
+3;632252880;486bec9f3d966f1be2e1deecac849394bf5cd9dc;da4df80b2312654a78b9ea6aa12673f4e6cda0ce
+4;582665664;cabf3b3cb7f83a4d57f2af2157e3a413be5f30bb;b017276fb56f1b877b4fc3b99b5f51d937fae178

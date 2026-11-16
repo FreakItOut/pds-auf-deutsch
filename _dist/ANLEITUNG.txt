@@ -1,0 +1,303 @@
+﻿PANZER DRAGOON SAGA – DEUTSCHE TEXTFASSUNG (FAN-ÜBERSETZUNG)
+Schritt-für-Schritt-Anleitung
+
+Version 2.3 (2026-11-16) · Region PAL/Europe, Discs 1 bis 4
+======================================================================
+
+
+SCHNELLSTART IN 5 SCHRITTEN
+----------------------------------------------------------------------
+1. Eigene Original-Discs 1–4 als BIN/CUE auslesen (Kapitel 3).
+2. "PDS_Deutsch_Patcher.exe" doppelklicken.
+3. "Discs automatisch finden…" drücken und den Ordner mit den BINs
+   wählen; warten, bis alle vier Discs "Original-Abbild okay" zeigen.
+4. "Patch anwenden" drücken (vorher wird automatisch gesichert).
+5. Die .cue im Emulator laden und spielen.
+
+
+1) WAS IST DAS?
+----------------------------------------------------------------------
+Die EXE macht aus deinem unveränderten Spiel die Fassung mit
+deutschen Texten.
+
+  - "PDS_Deutsch_Patcher.exe": ein einziges Programm. Es enthält
+    Fenster, Patch, diese Anleitung und eine eingebaute
+    Python-Laufzeit. Du musst dafür nichts installieren.
+  - Ohne EXE geht es auch: "pds_deutsch_patcher_gui.py" (Fenster)
+    oder "pds_deutsch_patcher.py" (Kommandozeile). Beide liegen im
+    Verteilungsordner. Dafür braucht dein Rechner Python 3.8 oder
+    neuer (Kapitel 7).
+
+Die Patch-Datei "pds_deutsch_patch.pzp" enthält nur die deutschen
+Texte, ihre Stellen im Abbild und Prüfsummen – kein Byte Original-
+Spieldaten. Beim Patchen wird jeder Block einzeln per CRC geprüft.
+Danach wird die fertige Datei über ihre SHA-1 mit dem erwarteten
+Ergebnis verglichen.
+
+Stimmt die Gesamt-Prüfsumme deines Abbilds nicht (z. B. weil ein
+anderes Ausleseprogramm andere Rohdaten liefert), bricht der Patcher
+ab. Nur wenn du ausdrücklich "Abweichende Gesamt-Prüfsumme erlauben
+(--force)" setzt, zählen allein die Block-CRCs. Passt auch nur ein
+Block nicht, wird nichts geschrieben.
+
+Der Patch verändert nur Text. Es ist ein privates Fanprojekt und hat
+mit SEGA nichts zu tun.
+
+ERLAUBT: privater Gebrauch mit deiner eigenen, legal erworbenen
+PAL-EU-Kopie.
+NICHT ERLAUBT: gepatchte Abbilder weitergeben, hochladen oder
+kommerziell nutzen.
+
+
+2) WAS MAN BRAUCHT
+----------------------------------------------------------------------
+- eigene "Panzer Dragoon Saga" (Europe), Disc 1 bis Disc 4.
+  US- und JP-Fassungen passen NICHT.
+- ein Programm zum Auslesen der eigenen CDs (Kapitel 3).
+- für die EXE: nichts weiter.
+- für die .py-Variante: Python 3.8+, 64-Bit (Kapitel 7).
+- freier Festplattenplatz: ca. 2,5 GB im Standard-Modus (für die
+  Sicherungen), ca. 5 GB, wenn du zusätzlich den Kopiermodus nutzt.
+
+
+3) SCHRITT 1: EIGENE DISCS AUSLESEN (BIN/CUE)
+----------------------------------------------------------------------
+Es braucht ein rohes Abbild: 2352 Bytes pro Sektor, Format BIN/CUE,
+mit allen Tracks. Ein Satz sieht so aus (Beispiel Disc 1):
+
+  Panzer Dragoon Saga (Europe) (Disc 1) (Track 1).bin   (Spieldaten)
+  Panzer Dragoon Saga (Europe) (Disc 1) (Track 2).bin   (Musik)
+  Panzer Dragoon Saga (Europe) (Disc 1) (Track 3).bin   (Musik)
+  Panzer Dragoon Saga (Europe) (Disc 1).cue
+
+So sieht es auch für Disc 2 und 3 aus; Disc 4 hat 4 Tracks
+(1 Datenspur + 3 Musikspuren).
+
+"Discs automatisch finden…" erkennt die Discs am Dateinamen: darin
+muss "Disc 1" bis "Disc 4" stehen. Wählst du die Dateien von Hand,
+ist der Name egal – es zählt nur die Datei selbst.
+
+Programme dafür (Windows):
+  a) DiscImageCreator (Kommandozeile, sehr zuverlässig)
+  b) ImgBurn: "Create image file from disc", Ausgabe BIN/CUE
+  c) Alcohol 120%: Abbild erstellen im Roh-Modus (RAW), BIN/CUE
+
+Einfache "ISO"-Rips (2048 Bytes/Sektor, ohne Musik-Tracks) kann das
+Tool NICHT benutzen. Es muss BIN/CUE sein.
+
+Prüfsumme: "sha1_checkliste.txt" enthält die Spalten "orig_sha1"
+(dein unbearbeitetes Abbild) und "deutsch_sha1" (nach dem Patchen).
+Vergleiche deine Track-1-Datei damit, z. B. in PowerShell:
+  Get-FileHash -Algorithm SHA1 "Datei.bin"
+Stimmt die Summe, ist dein Abbild das erwartete Original.
+
+
+4) SCHRITT 2 BIS 4: DIE EXE ANWENDEN
+----------------------------------------------------------------------
+SCHRITT 2: Starten
+  Doppelklick auf "PDS_Deutsch_Patcher.exe". Es öffnet sich das
+  Fenster. Die Patch-Datei ist eingebaut: In der Patch-Karte steht
+  "pds_deutsch_patch.pzp" und darunter "eingebaut in dieser EXE".
+  Über "Andere Datei…" kannst du eine neuere .pzp wählen. Auch diese
+  Anleitung ist eingebaut (Button "Anleitung öffnen"); die .pzp-Datei
+  brauchst du neben der EXE nicht.
+
+SCHRITT 3: Discs auswählen
+  a) "Discs automatisch finden…" drücken.
+  b) Im Dialog den Ordner deiner BIN/CUE-Dateien angeben.
+  c) Rechts in jeder Disc-Karte erscheint der Status. Warte, bis alle
+     vier "Original-Abbild okay" zeigen (wenige Sekunden bis etwa
+     eine Minute pro Disc – es wird die SHA-1 berechnet).
+  d) Alternative: jede Disc einzeln über "Wählen…" in der Karte.
+     Das "✕" neben dem Pfad entfernt eine gewählte Datei wieder.
+
+Status-Bezeichnungen:
+  "Original-Abbild okay"      = perfekt für den Patch
+  "bereits deutsch gepatcht"  = wird beim Lauf übersprungen
+  "SHA1 unbekannt (…)"        = andere Revision oder anderes
+                                Ausleseprogramm; siehe Kapitel 8
+  "Größe unpassend"           = kein rohes BIN/CUE-Abbild oder falsche
+                                Disc; siehe Kapitel 3
+  "kein Patch für Disc N"     = die .pzp enthält diese Disc nicht
+  "fertig"                    = nach erfolgreichem Patchen
+
+SCHRITT 4: Patchen
+  a) Empfehlung: zuerst das Häkchen "Nur prüfen (nichts ändern)"
+     setzen – der Knopf heißt dann "Nur prüfen". Er prüft alle
+     Textblöcke und schreibt nichts.
+  b) Danach das Häkchen entfernen und "Patch anwenden" drücken.
+  c) Standard-Modus "Direkt ersetzen": Die Track-1-Datei wird direkt
+     ersetzt; vorher legt der Patcher automatisch eine Kopie
+     "…(Track 1).bin.original.bak" an. Das Fenster fragt vor dem
+     Schreiben noch einmal nach.
+     Existiert bereits eine solche Sicherung, bricht der Lauf ab –
+     die alte .bak vorher löschen oder umbenennen.
+  d) Wer lieber neue Dateien hat: Modus "Neue Dateien schreiben" +
+     Zielordner angeben. Der Patcher schreibt dann
+     "…(Track 1) (Deutsch).bin", eine passende
+     "…(Track 1) (Deutsch).cue" und kopiert die Musik-Tracks mit.
+
+Tastenkürzel: F5 = Status prüfen, Strg+Enter = Start.
+
+Ergebnis pro Disc im Protokoll: "GEPATCHT UND GEPRUEFT: OK" heißt
+erfolgreich. Dauer: wenige Sekunden bis etwa eine Minute pro Disc.
+
+
+5) SCHRITT 5: ERFOLG PRÜFEN UND SPIELEN
+----------------------------------------------------------------------
+Erfolg prüfen:
+  - Jede Disc muss "GEPATCHT UND GEPRUEFT: OK" zeigen (nach dem
+    Schreiben berechnet der Patcher die SHA-1 erneut).
+  - Oder: SHA-1 der gepatchten Dateien mit der Spalte
+    "deutsch_sha1" aus "sha1_checkliste.txt" vergleichen.
+
+Spielen:
+  - Emulator (SSF, Mednafen/Beetle Saturn, RetroArch Saturn-Kern
+    u. a.): die passende .cue laden. Beim Standard-Modus die übliche
+    .cue im Ordner; beim "Neue Dateien"-Modus die neue
+    "(Deutsch).cue".
+  - echtes Saturn: die neue .cue mit ImgBurn langsam (4x) auf einen
+    guten Rohling brennen. Die Original-Disc bleibt unangetastet.
+
+
+6) ZURÜCK ZUM ORIGINAL
+----------------------------------------------------------------------
+Beim Standard-Modus liegt neben jeder gepatchten Datei die Kopie des
+Originals: "…(Track 1).bin.original.bak".
+Rückwechsel:
+  1. gepatchte "(Track 1).bin" löschen oder umbenennen
+  2. ".original.bak" umbenennen in "…(Track 1).bin"
+Fertig. Die .bak-Datei nicht löschen, solange sie gebraucht wird.
+Beim Kopiermodus hast du zusätzlich dein unverändertes Original.
+
+
+7) PYTHON-OPTION (NUR FÜR DEN .PY-WEG)
+----------------------------------------------------------------------
+Die EXE bringt Python mit und braucht KEIN installiertes Python.
+Nur wenn du die .py-Dateien ohne EXE laufen lassen willst, brauchst
+du Python 3.8 oder neuer. Die GUI hilft dabei über die Zeile unten
+im Fenster:
+  - "Python prüfen": zeigt gefunden oder nicht und die Version.
+  - "Python installieren": lädt den offiziellen Installer von
+    python.org herunter und startet ihn. WICHTIG: im Installer das
+    Häkchen "Add python.exe to PATH" ankreuzen.
+
+Danach "Python prüfen" erneut klicken; es sollte grün erscheinen.
+Dann der .py-Weg:
+  1. "pds_deutsch_patcher.py", "pds_deutsch_patcher_gui.py" und
+     "pds_deutsch_patch.pzp" in einen Ordner legen (so liegen sie im
+     Verteilungsordner).
+  2. Doppelklick auf "pds_patch_starten.bat" startet das Fenster.
+     Alternativ: python pds_deutsch_patcher_gui.py
+  3. Weiter wie in Kapitel 4 ab SCHRITT 3.
+
+
+8) FEHLERBEHEBUNG
+----------------------------------------------------------------------
+Meldung                            | Lösung
+-----------------------------------+----------------------------------
+Größe passt nicht                  | .cue statt .bin angegeben oder
+                                   | kein rohes 2352-Byte-Abbild
+                                   | (z. B. ISO). Kapitel 3.
+Gesamt-Prüfsumme ABWEICHEND,       | anderes Ausleseprogramm oder
+Abbruch                            | andere Revision. Wenn du sicher
+                                   | bist, dass es das richtige Spiel
+                                   | ist: Häkchen "Abweichende
+                                   | Gesamt-Prüfsumme erlauben"
+                                   | setzen. Es wird dann jeder
+                                   | Textblock per CRC geprüft.
+X von Y Textblöcken passen nicht   | Falsche Version (JP/US) oder
+(CRC)                              | kaputtes Abbild. Es WURDE NICHTS
+                                   | GESCHRIEBEN; Disc neu auslesen.
+Nachprüfung fehlgeschlagen         | Neu geschriebene Datei defekt;
+                                   | Sicherung zurückholen, neu
+                                   | patchen.
+…original.bak existiert bereits    | Die Sicherung des ersten Laufs
+                                   | ist noch da. Alte .bak löschen
+                                   | oder umbenennen, dann erneut
+                                   | patchen.
+Python nicht gefunden              | Kapitel 7: "Python prüfen" und
+                                   | "Python installieren".
+GUI-Fenster öffnet sich nicht      | Doppelklick auf die EXE. Bei
+                                   | der .py-Variante:
+                                   | python pds_deutsch_patcher_gui.py
+Disc wird nicht erkannt            | Nur bei "automatisch finden":
+                                   | im Dateinamen muss "Disc 1" bis
+                                   | "Disc 4" stehen (Kapitel 3).
+
+Tipp: Vor dem echten Patchen zuerst "Nur prüfen" durchlaufen.
+
+
+9) WARUM DIE ÜBERSETZUNG SO IST, WIE SIE IST
+----------------------------------------------------------------------
+Manche Stellen hinterlassen bewusst den Eindruck, sie seien "nicht
+übersetzt" oder "unvollständig". Das ist kein Versehen, sondern
+ergibt sich aus vier harten technischen Regeln des Saturn-Spiels:
+
+a) LÄNGENREGEL "NIEMALS LÄNGER ALS DAS ENGLISCHE"
+   Der Spieltext wird in reservierte Blöcke des Abbilds geschrieben,
+   deren Größe das Original vorgibt. Jede Ersatzzeile darf die Länge
+   der englischen Zeile NICHT überschreiten, sonst würde der
+   ausschiebende Text in dahinterliegende Spieldaten hineinragen.
+   Wo das Englische lange Wörter benutzte, klingen einzelne deutsche
+   Sätze deshalb bewusst knapp (Telegramm-Stil) – aber sie sind
+   vollständig und sinnidentisch.
+
+b) ZEILENRAUM IN KAMPF- UND MENÜ-ANZEIGEN
+   In Kämpfen und Menü-Zeilen sind die Anzeige-Rahmen klein und auf
+   die englischen Kurzformen zugeschnitten ("HP Max", "Level UP",
+   "Laser"). Deutsche Langwörter ("Lebenspunkte", "Stufe", "Ziel")
+   würden diese Rahmen sprengen. Dort bleiben die englischen
+   Kurzformen oder sehr knappe Kurzausdrücke, die in den Rahmen
+   passen. Das entspricht dem Arcade-Charakter der Anzeigen.
+
+c) NAMEN UND FESTSTEHENDE BEGRIFFE
+   Eigennamen (Edge, Gash, Azel, Paet, Craymen …) bleiben wie im
+   Englischen/Original. Wörter, die im Deutschen gleich heißen
+   (Laser, Radar …), bleiben ebenfalls. So bleibt die Namenswelt
+   die bekannte des Spiels.
+
+d) INTERNE TEST-/FEHLERTEXTE
+   Ein paar wenige Zeichenketten (z. B. "FLD ERROR !", "combo:",
+   Debug-Zeilen) sind KEINE sichtbaren Spieler-Texte, sondern
+   interne Diagnosen, die im Spiel nie eingeblendet werden. Diese
+   wurden absichtlich NICHT angetastet, damit die Prüfbilanz
+   byte-genau bleibt.
+
+e) UMLAUTE IM SPIEL
+   Diese Fassung enthält echte Umlaut-Glyphen direkt im Spiel-Font:
+   ä, ö, ü, Ä, Ö, Ü und ß. Sie erscheinen in Dialogen, Menüs und in
+   den FMV-Untertiteln (die Untertitel benutzen denselben Font).
+   Frühere Fassungen schrieben am Wortanfang "Ae", "Oe", "Ue" – das
+   ist behoben.
+
+
+10) ABDECKUNG
+----------------------------------------------------------------------
+Übersetzt sind alle Spieltexte: Feld- und Stadtdialoge, Menüs,
+Shops, Tutorials, Kampf-Anzeigen, FMV-Untertitel und die
+Namensauswahl auf Disc 1. Absichtlich UNÜBERSETZT bleiben:
+  - Eigennamen (Edge, Gash, Azel, Paet …)
+  - Wörter, die im Deutschen gleich sind (Laser, Level UP,
+    HP Max …)
+  - wenige interne Test-/Fehlermeldungen, die im Spiel nie erscheinen
+    (z. B. "FLD ERROR !")
+  - Teile der Kampf-Informationssätze, wo das Englische selbst
+    abgekürzt/unvollständig war – die deutsche Fassung folgt dort
+    dem Original-Ticks.
+
+Technisch: pro Disc ca. 0,06–0,08 % der Bytes verändert, rund
+400–490 KB in etwa 1.100–1.300 Textblöcken (alle vier Discs
+zusammen: ca. 4.800 Blöcke). Alles andere bleibt byte-identisch mit
+deinem Original.
+
+
+11) HAFTUNG
+----------------------------------------------------------------------
+Nutzung auf eigene Gefahr, ohne Garantie. Halte immer eine Kopie der
+Original-Dateien (der Standard-Modus macht das automatisch als
+*.original.bak). Für den ersten Lauf zuerst "Nur prüfen" verwenden.
+
+Viel Erfolg und gutes Spiel!
+
+                  - Das PDS-Fan-Übersetzer-Projekt (FreakItOut)
