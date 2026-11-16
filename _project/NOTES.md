@@ -1632,3 +1632,14 @@ EXE: 12.910.190 B, SHA1 b643f8b5e608b39c (Patch-Datei unveraendert).
 - EXE neu gebaut (Anleitung eingebettet): 12.910.243 B,
   SHA1 db68fa62ea3bff42, selftest=0, check Disc1=0, eingebettete
   ANLEITUNG.txt identisch mit _dist (SHA1 44261c42160a7d3a).
+
+## VEROEFFENTLICHUNG (2026-11-16)
+
+- GitHub-Repository: https://github.com/FreakItOut/pds-auf-deutsch
+  (public, Branch main)
+- Release V1: https://github.com/FreakItOut/pds-auf-deutsch/releases/tag/v1
+  mit PDS_Deutsch_Patcher.exe, pds_deutsch_patch.pzp, ANLEITUNG.txt
+  und sha1_checkliste.txt
+- Im Repo liegen nur Werkzeuge und Dokumentation (648 Dateien, ca. 1,9 MB).
+  Disc-Images, _work, _build, pdt-recompile-builder sowie .exe/.pzp
+  sind per .gitignore ausgeschlossen.
